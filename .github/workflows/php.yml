@@ -1,4 +1,4 @@
-name: Create Blank File
+name: Permission
 
 on:
   push:
