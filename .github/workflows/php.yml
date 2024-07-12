@@ -1,24 +1,23 @@
-name: Create A File
-# This workflow is triggered on pushes to the repository.
+name: Create Blank File
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  createFile:
-    name: Create A File
+  create-blank-file:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout repository
-      - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: List directory before
-      - run: ls -al
+    - name: List directory before
+      run: ls -al
 
-      - name: List directory after
-      - run: touch aa.php
-      
-      - name: List directory after
-      - run: ls -al
+    - name: Create blank testing.php file
+      run: touch testing.php
+
+    - name: List directory after
+      run: ls -al
