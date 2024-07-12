@@ -31,3 +31,5 @@ jobs:
         git add testing.php
         git commit -m 'Add blank testing.php'
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
