@@ -17,7 +17,7 @@ jobs:
       run: ls -alh
 
     - name: File permission
-      run: chmod -R 777 src/a.php
+      run: chmod -R 777 pp.png
 
     - name: List directory after
       run: ls -alh
