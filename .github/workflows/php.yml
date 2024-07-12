@@ -13,7 +13,7 @@ jobs:
       - uses: 1arp/create-a-file-action@0.4.5
         with:
           path: 'src'
-          isAbsolutePath: false
+          isAbsolutePath: true
           file: 'foo.bar'
           content: |
             Hello
