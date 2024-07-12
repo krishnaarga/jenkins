@@ -1,6 +1,6 @@
 name: Create File
 
-on: 
+on:
   push:
     branches:
       - main
@@ -8,10 +8,26 @@ on:
 jobs:
   create-file:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
+
+    - name: List directory before
+      run: ls -al
+
     - name: Create testing.php file
       run: echo "Hello World" > testing.php
+
+    - name: List directory after
+      run: ls -al
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add testing.php
+        git commit -m 'Add testing.php with Hello World content'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
