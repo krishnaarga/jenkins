@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Create new file
+      run: touch abc.php
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
