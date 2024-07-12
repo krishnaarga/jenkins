@@ -1,16 +1,27 @@
-name: Create A File
-# This workflow is triggered on pushes to the repository.
-on:
+name: Create File
+
+on: 
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  createFile:
-    name: Create A File
+  create-file:
     runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       
     - name: Create testing.php file
       run: echo "Hello World" > testing.php
+      
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add testing.php
+        git commit -m 'Add testing.php with Hello World content'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
