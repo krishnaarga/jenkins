@@ -15,13 +15,3 @@ jobs:
       
     - name: Create testing.php file
       run: echo "Hello World" > testing.php
-      
-    - name: Commit and push changes
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add testing.php
-        git commit -m 'Add testing.php with Hello World content'
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
