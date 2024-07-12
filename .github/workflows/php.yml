@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: 1arp/create-a-file-action@0.4.5
         with:
-          path: 'src'
-          isAbsolutePath: true
+          path: 'krishnaarga/jenkins/src'
+          isAbsolutePath: false
           file: 'foo.bar'
           content: |
             Hello
