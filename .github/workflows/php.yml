@@ -16,13 +16,6 @@ jobs:
 
       - name: List directory before
       - run: ls -al
-      
-      - uses: 1arp/create-a-file-action@0.4.5
-      - with:
-          file: 'foo.bar'
-          content: |
-            Hello
-            World
 
       - name: List directory after
       - run: touch aa.php
