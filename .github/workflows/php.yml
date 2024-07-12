@@ -17,7 +17,7 @@ jobs:
       run: ls -al
 
     - name: Create blank testing.php file
-      run: touch testing.php
+      run: touch src/p.php
 
     - name: List directory after
       run: ls -al
