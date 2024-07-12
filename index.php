@@ -1,3 +1,5 @@
 <?php 
 
-echo "Hello";
+echo "Hello \n";
+
+echo "World";
