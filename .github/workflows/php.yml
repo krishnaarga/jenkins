@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  create-blank-file:
+  check-file:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,22 +14,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: List directory before
-      run: ls -al
+      run: ls -alh
 
-    - name: Create blank testing.php file
-      run: |
-        touch testing.php
-        ls -al
+    - name: File permission
+      run: chmod -R 777 src/a.php
 
-    - name: Configure git
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
+    - name: List directory after
+      run: ls -alh
 
-    - name: Commit and push changes
-      run: |
-        git add testing.php
-        git commit -m 'Add blank testing.php'
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
