@@ -21,5 +21,13 @@ jobs:
         touch testing.php
         ls -al
 
-    - name: List directory after
-      run: ls -alh
+    - name: Configure git
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+
+    - name: Commit and push changes
+      run: |
+        git add testing.php
+        git commit -m 'Add blank testing.php'
+        git push
