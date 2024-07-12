@@ -1,30 +1,21 @@
-name: Create File
-
+name: Create A File
+# This workflow is triggered on pushes to the repository.
 on:
   push:
     branches:
       - main
 
 jobs:
-  create-file:
+  createFile:
+    name: Create A File
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: List directory before
-      run: ls -al
-
-    - name: Create testing.php file
-    - uses: 1arp/create-a-file-action@0.4.5
-      with:
-        path: 'src'
-        isAbsolutePath: false
-        file: 'foo.bar'
-        content: |
-          Hello
-          World
-
-    - name: List directory after
-      run: ls -al
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.5
+        with:
+          path: 'src'
+          isAbsolutePath: false
+          file: 'foo.bar'
+          content: |
+            Hello
+            World
